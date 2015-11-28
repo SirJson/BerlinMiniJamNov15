@@ -4,7 +4,7 @@ using PathologicalGames;
 
 public class BulletControl : MonoBehaviour {
 
-
+    public AudioClip Kill;
 	public float bulletSpeed;
 
 
@@ -23,6 +23,7 @@ public class BulletControl : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll){
 		if(coll.gameObject.layer == 10){
 			Destroy(coll.gameObject);
+            Function.Play2DSound(Kill);
             		PoolManager.Pools[PoolIdentifier.Bullets].Despawn(transform);
 			Game.shieldPoints++;
         	}

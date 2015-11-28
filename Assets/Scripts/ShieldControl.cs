@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShieldControl : MonoBehaviour {
-
-	// Use this for initialization
+public class ShieldControl : MonoBehaviour
+{
+    public AudioClip Clip;
+   	// Use this for initialization
 	void Start () {
 	
 	}
@@ -16,7 +17,8 @@ public class ShieldControl : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll){
 		if(coll.gameObject.layer == 10){
 			Destroy(coll.gameObject);
-		}
+            Function.Play2DSound(Clip);
+        }
 	}
 
 
