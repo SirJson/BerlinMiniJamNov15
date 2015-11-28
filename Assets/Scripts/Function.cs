@@ -10,6 +10,7 @@ public static class PoolIdentifier
     public const string Audio = "Audio";
     public const string Text = "Text";
     public const string Marker = "Marker";
+    public const string Bullets = "Bullets";
 }
 
 public static class Function
