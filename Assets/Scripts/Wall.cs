@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using PathologicalGames;
 
 public class Wall : MonoBehaviour {
 
@@ -18,6 +19,10 @@ public class Wall : MonoBehaviour {
         if(coll.gameObject.layer == 10)
         {
             Destroy(coll.gameObject);
+        }
+        if(coll.gameObject.layer == 12)
+        {
+            PoolManager.Pools[PoolIdentifier.Bullets].Despawn(coll.gameObject.transform);
         }
     }
 }

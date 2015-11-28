@@ -31,4 +31,10 @@ public class GameRules : MonoBehaviour
         }
         difficultyTimer -= Time.deltaTime;
     }
+
+    public void GameOver()
+    {
+        Game.Stopwatch.Stop();
+        Application.LoadLevel("gameOver");
+    }
 }

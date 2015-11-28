@@ -23,6 +23,12 @@ public class Sun : MonoBehaviour
             Destroy(other.gameObject);
             Grow();
         }
+        if (other.gameObject.layer == 11)
+        {
+            Destroy(other.gameObject);
+            var rules = Function.GetClassFromScene<GameRules>();
+            rules.GameOver();
+        }
     }
 
     void Grow()

@@ -42,8 +42,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Garbage:
   - {fileID: 197466, guid: f97a9b51b5d578942b602f0e8850b963, type: 2}
-  MinYForce: -80
-  MaxYForce: 80
+  MinYForce: -50
+  MaxYForce: 50
   MinXForce: 100
   MaxXForce: 200
   MaxSpawnTimer: 3

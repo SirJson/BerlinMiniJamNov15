@@ -57,19 +57,7 @@ public class PlayerControl : MonoBehaviour {
 
 		var clone = PoolManager.Pools[PoolIdentifier.Bullets].Spawn(bullet.transform,player.position, Quaternion.identity);
 
-		PoolManager.Pools[PoolIdentifier.Bullets].Despawn(clone, 3);
-	}
-
-	void OnCollisionEnter2D(Collision2D coll){
-		
-		if(coll.gameObject.layer == 9){
-			gameOver();
-		}
-	}
-
-	void gameOver(){
-			Destroy(this);
-		Application.LoadLevel("gameOver");
+		//PoolManager.Pools[PoolIdentifier.Bullets].Despawn(clone, 3);
 	}
 
 }// eoc PlayerControl

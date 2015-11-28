@@ -1,6 +1,7 @@
 using PathologicalGames;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -60,7 +61,27 @@ public static class Function
 		return timestamp;
 	}
 
-	public static List<RaycastHit> CircleCast(Vector3 origin, int resolution, int layer, float length = Mathf.Infinity)
+    public static string GetStopwatchString()
+    {
+        var time = Game.Stopwatch.Elapsed;
+        var stringBuffer = new StringBuilder();
+        stringBuffer.Length = 0;
+        if (time.Minutes < 10)
+            stringBuffer.Append(UIStopwatch.Zero);
+        stringBuffer.Append(time.Minutes);
+        stringBuffer.Append(UIStopwatch.Seperator);
+        if (time.Seconds < 10)
+            stringBuffer.Append(UIStopwatch.Zero);
+        stringBuffer.Append(time.Seconds);
+        stringBuffer.Append(UIStopwatch.Seperator);
+        if (time.Milliseconds / 10 < 10)
+            stringBuffer.Append(UIStopwatch.Zero);
+        stringBuffer.Append(time.Milliseconds / 10);
+
+        return stringBuffer.ToString();
+    }
+
+    public static List<RaycastHit> CircleCast(Vector3 origin, int resolution, int layer, float length = Mathf.Infinity)
 	{
 		int steps = 360/resolution;
 		var hits = new List<RaycastHit>();
