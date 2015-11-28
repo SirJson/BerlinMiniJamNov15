@@ -3,8 +3,6 @@ using System.Collections;
 using PathologicalGames;
 
 public class PlayerControl : MonoBehaviour {
-
-
 	public float speed;
 	public Rigidbody2D player;
 	public GameObject bullet;
@@ -66,31 +64,11 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	void shoot(){
-
-		var clone = PoolManager.Pools[PoolIdentifier.Bullets].Spawn(bullet.transform,player.position, Quaternion.identity);
-
-<<<<<<< HEAD
-		//PoolManager.Pools[PoolIdentifier.Bullets].Despawn(clone, 3);
-=======
-		PoolManager.Pools[PoolIdentifier.Bullets].Despawn(clone, 3);
-
-	}
-
-	void OnCollisionEnter2D(Collision2D coll){
-		
-		if(coll.gameObject.layer == 9){
-			gameOver();
-		}
+		PoolManager.Pools[PoolIdentifier.Bullets].Spawn(bullet.transform,player.position, Quaternion.identity);
 	}
 
 	void canShootAgain(){
 		canShoot = true;
-	}
-
-	void gameOver(){
-			Destroy(this);
-		Application.LoadLevel("gameOver");
->>>>>>> 0c77ff85d9b53b6501fdc6b6bf070f918ad5c260
 	}
 
 }// eoc PlayerControl
