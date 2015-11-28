@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using PathologicalGames;
 
 public class PlayerControl : MonoBehaviour {
 
@@ -50,11 +51,22 @@ public class PlayerControl : MonoBehaviour {
 
 	void shoot(){
 
-		Instantiate(bullet, player.position , Quaternion.identity);
+		var clone = PoolManager.Pools[PoolIdentifier.Bullets].Spawn(bullet.transform,player.position, Quaternion.identity);
+
+		PoolManager.Pools[PoolIdentifier.Bullets].Despawn(clone, 3);
 	}
 
+	void OnCollisionEnter2D(Collision2D coll){
+		
+		if(coll.gameObject.layer == 9){
+			gameOver();
+		}
+	}
 
-
+	void gameOver(){
+			Destroy(this);
+		Application.LoadLevel("gameOver");
+	}
 
 }// eoc PlayerControl
 
