@@ -13,6 +13,7 @@ public static class PoolIdentifier
     public const string Marker = "Marker";
     public const string Bullets = "Bullets";
     public const string Garbage = "Garbage";
+	public const string Shield = "Shield";
 }
 
 public static class Function

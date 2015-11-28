@@ -16,6 +16,7 @@ public class GameRules : MonoBehaviour
     void Start () {
         PoolManager.Pools.Create(PoolIdentifier.Bullets);
         PoolManager.Pools.Create(PoolIdentifier.Garbage);
+		PoolManager.Pools.Create(PoolIdentifier.Shield);
         difficultyTimer = UpdateDifficultyTimer;
     }
 

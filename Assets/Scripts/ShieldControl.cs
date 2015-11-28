@@ -1,29 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletControl : MonoBehaviour {
+public class ShieldControl : MonoBehaviour {
 
-
-	public float bulletSpeed;
-
-
+	// Use this for initialization
 	void Start () {
 	
 	}
 	
+	// Update is called once per frame
 	void Update () {
-
-		GetComponent<Rigidbody2D>().velocity = Vector3.left * bulletSpeed;
-
+	
 	}
-
-
 
 	void OnCollisionEnter2D(Collision2D coll){
 		if(coll.gameObject.layer == 10){
 			Destroy(coll.gameObject);
-			Game.shieldPoints++;
 		}
 	}
+
 
 }

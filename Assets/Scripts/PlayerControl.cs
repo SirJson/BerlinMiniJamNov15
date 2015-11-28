@@ -8,9 +8,12 @@ public class PlayerControl : MonoBehaviour {
 	public GameObject bullet;
 	public bool canShoot = true;
 	public float timer = 1.0f;
+	public float shieldDuration = 5.0f;
 
 	private float cooldown;
 	public float lockPos = 90;
+
+	public GameObject shield;
 
 
 	void Start () {
@@ -19,6 +22,10 @@ public class PlayerControl : MonoBehaviour {
 	
 	void Update () {
 	
+		if(Input.GetKeyDown(KeyCode.S)){
+			makeShield();
+		}
+
 		if(cooldown > 0){
 			cooldown-= Time.deltaTime;
 		}
@@ -69,6 +76,15 @@ public class PlayerControl : MonoBehaviour {
 
 	void canShootAgain(){
 		canShoot = true;
+	}
+
+
+	void makeShield(){
+		if(Game.shieldPoints >= 1){
+			var clone = PoolManager.Pools[PoolIdentifier.Shield].Spawn(shield.transform,player.position,Quaternion.identity);
+			PoolManager.Pools[PoolIdentifier.Shield].Despawn(clone, shieldDuration);
+			Game.shieldPoints = 0;
+		}
 	}
 
 }// eoc PlayerControl
