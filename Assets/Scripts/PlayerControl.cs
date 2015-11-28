@@ -80,7 +80,7 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	void shoot(){
-		PoolManager.Pools[PoolIdentifier.Bullets].Spawn(bullet.transform,player.position, Quaternion.identity);
+		var a = PoolManager.Pools[PoolIdentifier.Bullets].Spawn(bullet.transform, player.position, Quaternion.identity);
         Function.Play2DSound(Fire);
 	}
 

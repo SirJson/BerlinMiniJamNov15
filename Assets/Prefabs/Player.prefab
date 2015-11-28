@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 441046}
   - 50: {fileID: 5055230}
-  - 61: {fileID: 6193344}
   - 114: {fileID: 11497254}
   - 212: {fileID: 21255610}
+  - 61: {fileID: 6190734}
   m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 181502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 4.6053319, y: 4.60532951, z: 4.60532951}
+  m_LocalScale: {x: .800000012, y: .800000012, z: .800000012}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -47,7 +47,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &6193344
+--- !u!61 &6190734
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -59,7 +59,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.48000002, y: 4.59000015}
 --- !u!114 &11497254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,7 +76,12 @@ MonoBehaviour:
   bullet: {fileID: 152378, guid: e525b800b6fde9440a2255aff6f276d7, type: 2}
   canShoot: 1
   timer: .400000006
+  shieldDuration: 5
+  Death: {fileID: 8300000, guid: 8f7d6d980b50d384cb4b519fbf2a5ebc, type: 3}
+  Fire: {fileID: 8300000, guid: 3cedb7b82cb241d43b2724383937038a, type: 3}
+  Dead: 0
   lockPos: 0
+  shield: {fileID: 169898, guid: c050db1a32e4f39488e2c83d9d79f172, type: 2}
 --- !u!212 &21255610
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -101,8 +106,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 00f9c5a9cd57db8499f9a48ebf8104a2, type: 3}
-  m_Color: {r: .536764741, g: .0552551821, b: .0552551821, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c626c3cc34bfe5d4583662f353285c12, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
