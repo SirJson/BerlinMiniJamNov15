@@ -1060,6 +1060,34 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 475390, guid: 86462c15c86cedb4c8d99c3645187c81, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.89613307
+      objectReference: {fileID: 0}
+    - target: {fileID: 475390, guid: 86462c15c86cedb4c8d99c3645187c81, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.89613307
+      objectReference: {fileID: 0}
+    - target: {fileID: 475390, guid: 86462c15c86cedb4c8d99c3645187c81, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.89613307
+      objectReference: {fileID: 0}
+    - target: {fileID: 441046, guid: 86462c15c86cedb4c8d99c3645187c81, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4.11454868
+      objectReference: {fileID: 0}
+    - target: {fileID: 441046, guid: 86462c15c86cedb4c8d99c3645187c81, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 4.1145463
+      objectReference: {fileID: 0}
+    - target: {fileID: 441046, guid: 86462c15c86cedb4c8d99c3645187c81, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 4.1145463
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497254, guid: 86462c15c86cedb4c8d99c3645187c81, type: 2}
+      propertyPath: timer
+      value: .25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86462c15c86cedb4c8d99c3645187c81, type: 2}
   m_IsPrefabParent: 0

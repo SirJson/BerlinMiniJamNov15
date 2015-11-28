@@ -15,5 +15,13 @@ public class BulletControl : MonoBehaviour {
 
 		GetComponent<Rigidbody2D>().velocity = Vector3.left * bulletSpeed;
 	}
-		
+
+
+
+	void OnCollisionEnter2D(Collision2D coll){
+		if(coll.gameObject.layer == 10){
+			Destroy(coll.gameObject);
+		}
+	}
+
 }
