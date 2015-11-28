@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour {
 	public Rigidbody2D player;
 	public GameObject bullet;
 
+	public float lockPos = 90;
 
 
 	void Start () {
@@ -23,28 +24,31 @@ public class PlayerControl : MonoBehaviour {
 			shoot();
 		}
 
+
+		transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, lockPos, lockPos);
+
 	}
 
 	
 	void PlayerControls(){
 
-		if(Input.GetKeyDown(KeyCode.RightArrow)){
+		if(Input.GetKey(KeyCode.RightArrow)){
 
-			player.velocity = Vector3.right * speed;
+			player.AddForce(Vector3.right * speed);
 		}
 
-		if(Input.GetKeyDown(KeyCode.LeftArrow)){
+		if(Input.GetKey(KeyCode.LeftArrow)){
 			
-			player.velocity = Vector3.left * speed;
+			player.AddForce(Vector3.left * speed);
 		}
 		
-		if(Input.GetKeyDown(KeyCode.UpArrow)){
+		if(Input.GetKey(KeyCode.UpArrow)){
 			
-			player.velocity = Vector3.up * speed;
+			player.AddForce(Vector3.up * speed);
 		}
-		if(Input.GetKeyDown(KeyCode.DownArrow)){
+		if(Input.GetKey(KeyCode.DownArrow)){
 			
-			player.velocity = Vector3.down * speed;
+			player.AddForce(Vector3.down * speed);
 		}
 
 	}
