@@ -4,10 +4,16 @@ using System.Collections;
 public class Earth : MonoBehaviour
 {
     public GameObject[] Garbage;
-    public int MinYForce, MaxYForce;
-    public int MinXForce, MaxXForce;
+    public float MinYForce, MaxYForce;
+    public float MinXForce, MaxXForce;
+    public float MaxSpawnTimer, MinSpawnTimer;
+
+    public float HardestMaxSpawnTimer, HardestMinSpawnTimer;
+    public float TimerDecreaseStep = 1.0f;
+    public float ForceIncreaseStep = 1.0f;
 
     private float timer = 0;
+    private int spawnWave = 1;
 
 	// Use this for initialization
 	void Start ()
@@ -32,8 +38,22 @@ public class Earth : MonoBehaviour
 
         if(timer <= 0)
         {
-            timer = Random.Range(0.1f,1f);
-            FireGarbage();
+            timer = Random.Range(MinSpawnTimer,MaxSpawnTimer);
+            for(var i = 0; i < spawnWave; i++) FireGarbage();
         }
 	}
+
+    public void UpdateSpawnDifficulty()
+    {
+        Debug.Log("Update Spawn");
+
+        spawnWave++;
+    }
+
+    public void UpdateForceDifficulty()
+    {
+        Debug.Log("Update Force");
+        MinXForce += ForceIncreaseStep;
+        MaxXForce += ForceIncreaseStep;
+    }
 }
