@@ -104,6 +104,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 92e2eac8c1ef7134a9623bd106ea6d7c, type: 3}
   - {fileID: 21300000, guid: 46f97f0787dc85d4c9c61301e1340562, type: 3}
   ChangeSpriteModulo: 10
+  Hit: {fileID: 8300000, guid: 9ede7327aa23676459273925f1dc9e95, type: 3}
+  GrowSnd: {fileID: 8300000, guid: 7c4720471d531f04fbc791da7e7e30df, type: 3}
 --- !u!212 &21238540
 SpriteRenderer:
   m_ObjectHideFlags: 1

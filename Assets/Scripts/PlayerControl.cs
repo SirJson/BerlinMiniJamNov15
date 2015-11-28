@@ -9,6 +9,9 @@ public class PlayerControl : MonoBehaviour {
 	public bool canShoot = true;
 	public float timer = 1.0f;
 	public float shieldDuration = 5.0f;
+    public AudioClip Death;
+    public AudioClip Fire;
+    public bool Dead = false;
 
 	private float cooldown;
 	public float lockPos = 90;
@@ -19,6 +22,12 @@ public class PlayerControl : MonoBehaviour {
 	void Start () {
 		cooldown = timer;
 	}
+
+    public void OnDeath()
+    {
+        Function.Play2DSound(Death);
+        Dead = true;
+    }
 	
 	void Update () {
 	
@@ -72,6 +81,7 @@ public class PlayerControl : MonoBehaviour {
 
 	void shoot(){
 		PoolManager.Pools[PoolIdentifier.Bullets].Spawn(bullet.transform,player.position, Quaternion.identity);
+        Function.Play2DSound(Fire);
 	}
 
 	void canShootAgain(){
