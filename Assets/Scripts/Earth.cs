@@ -4,6 +4,7 @@ using System.Collections;
 public class Earth : MonoBehaviour
 {
     public GameObject[] Garbage;
+    public Transform SpawnPoint;
     public float MinYForce, MaxYForce;
     public float MinXForce, MaxXForce;
     public float MaxSpawnTimer, MinSpawnTimer;
@@ -23,14 +24,13 @@ public class Earth : MonoBehaviour
 
     void FireGarbage()
     {
-        var spawnPos = transform.position + new Vector3(0, Random.Range(-7, 7));
+        var spawnPos = SpawnPoint.position + new Vector3(0, Random.Range(-7, 7));
         spawnPos.z = -2;
         var obj = Function.Spawn(Garbage[Random.Range(0, Garbage.Length)], spawnPos, Quaternion.identity);
         var body = obj.GetComponent<Rigidbody2D>();
         var xForce = Random.Range(MinXForce, MaxXForce);
         var yForce = Random.Range(MinYForce, MaxYForce);
         body.AddForce(new Vector2(xForce, yForce));
-        Debug.Log(string.Format("Spawn with {0}, {1}", xForce, yForce));
     }
 	
 	// Update is called once per frame
@@ -48,14 +48,11 @@ public class Earth : MonoBehaviour
 
     public void UpdateSpawnDifficulty()
     {
-        Debug.Log("Update Spawn");
-
         spawnWave++;
     }
 
     public void UpdateForceDifficulty()
     {
-        Debug.Log("Update Force");
         MinXForce += ForceIncreaseStep;
         MaxXForce += ForceIncreaseStep;
     }

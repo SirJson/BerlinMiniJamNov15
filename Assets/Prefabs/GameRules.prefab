@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f70fca118637a4588b73cb295ce933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpdateDifficultyTimer: 5
+  UpdateDifficultyTimer: 20
   TimerDecreaseModulo: 2
   Earth: {fileID: 0}
 --- !u!1001 &100100000

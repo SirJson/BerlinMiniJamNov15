@@ -74,6 +74,8 @@ MonoBehaviour:
   speed: 25
   player: {fileID: 5055230}
   bullet: {fileID: 152378, guid: e525b800b6fde9440a2255aff6f276d7, type: 2}
+  canShoot: 1
+  timer: .400000006
   lockPos: 0
 --- !u!212 &21255610
 SpriteRenderer:

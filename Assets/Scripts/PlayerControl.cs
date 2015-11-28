@@ -28,7 +28,7 @@ public class PlayerControl : MonoBehaviour {
 
 		PlayerControls();
 	
-		if(Input.GetKeyDown(KeyCode.Space) && canShoot){
+		if(Input.GetKey(KeyCode.Space) && canShoot){
 			shoot();
 			canShoot = false;
 			cooldown = timer;

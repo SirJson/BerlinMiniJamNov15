@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 484880}
   - 212: {fileID: 21238540}
-  - 60: {fileID: 6072534}
   - 114: {fileID: 11497782}
+  - 58: {fileID: 5857016}
   m_Layer: 9
   m_Name: Sun
   m_TagString: Untagged
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35, y: 0, z: 9}
+  m_LocalPosition: {x: 35.9000015, y: 0, z: 9}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 444474}
@@ -73,8 +73,8 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 10
---- !u!60 &6072534
-PolygonCollider2D:
+--- !u!58 &5857016
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -84,70 +84,8 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 1.39999998, y: 4}
-      - {x: 1.33000004, y: 3.99000001}
-      - {x: 1.16999996, y: 3.96000004}
-      - {x: 1, y: 3.92000008}
-      - {x: .879999995, y: 3.8900001}
-      - {x: .579999983, y: 3.78999996}
-      - {x: .49000001, y: 3.75}
-      - {x: -.00999999978, y: 3.50999999}
-      - {x: -.140000001, y: 3.43000007}
-      - {x: -.319999993, y: 3.30999994}
-      - {x: -.469999999, y: 3.19000006}
-      - {x: -.579999983, y: 3.0999999}
-      - {x: -.660000026, y: 3.02999997}
-      - {x: -1, y: 2.69000006}
-      - {x: -1.05999994, y: 2.61999989}
-      - {x: -1.19000006, y: 2.46000004}
-      - {x: -1.25, y: 2.3900001}
-      - {x: -1.38, y: 2.20000005}
-      - {x: -1.46000004, y: 2.06999993}
-      - {x: -1.5, y: 2}
-      - {x: -1.54999995, y: 1.90999997}
-      - {x: -1.63, y: 1.74000001}
-      - {x: -1.71000004, y: 1.55999994}
-      - {x: -1.79999995, y: 1.36000001}
-      - {x: -1.86000001, y: 1.13}
-      - {x: -1.92999995, y: .839999974}
-      - {x: -1.95000005, y: .74000001}
-      - {x: -1.97000003, y: .620000005}
-      - {x: -1.99000001, y: .469999999}
-      - {x: -2, y: .370000005}
-      - {x: -2, y: -.330000013}
-      - {x: -1.99000001, y: -.430000007}
-      - {x: -1.97000003, y: -.579999983}
-      - {x: -1.94000006, y: -.75999999}
-      - {x: -1.91999996, y: -.860000014}
-      - {x: -1.86000001, y: -1.09000003}
-      - {x: -1.84000003, y: -1.16999996}
-      - {x: -1.77999997, y: -1.34000003}
-      - {x: -1.67999995, y: -1.59000003}
-      - {x: -1.54999995, y: -1.87}
-      - {x: -1.38, y: -2.16000009}
-      - {x: -1.25, y: -2.3499999}
-      - {x: -1.19000006, y: -2.43000007}
-      - {x: -1.11000001, y: -2.51999998}
-      - {x: -1, y: -2.6500001}
-      - {x: -.660000026, y: -2.99000001}
-      - {x: -.579999983, y: -3.05999994}
-      - {x: -.430000007, y: -3.18000007}
-      - {x: -.289999992, y: -3.28999996}
-      - {x: -.230000004, y: -3.32999992}
-      - {x: .00999999978, y: -3.48000002}
-      - {x: .349999994, y: -3.6500001}
-      - {x: .649999976, y: -3.76999998}
-      - {x: .860000014, y: -3.83999991}
-      - {x: 1.13, y: -3.91000009}
-      - {x: 1.23000002, y: -3.93000007}
-      - {x: 1.47000003, y: -3.97000003}
-      - {x: 1.54999995, y: -3.98000002}
-      - {x: 1.65999997, y: -3.99000001}
-      - {x: 1.79999995, y: -4}
-      - {x: 2, y: -4}
-      - {x: 2, y: 4}
+  serializedVersion: 2
+  m_Radius: 3.88000011
 --- !u!114 &11497782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,6 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrowFactor: .100000001
+  SunSprites:
+  - {fileID: 21300000, guid: f15aaf6605cf5e349937081790fb5130, type: 3}
+  - {fileID: 21300000, guid: 6747daac9cffa5940b9be65fecedc4c8, type: 3}
+  - {fileID: 21300000, guid: 92e2eac8c1ef7134a9623bd106ea6d7c, type: 3}
+  - {fileID: 21300000, guid: 46f97f0787dc85d4c9c61301e1340562, type: 3}
+  ChangeSpriteModulo: 10
 --- !u!212 &21238540
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -184,7 +128,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b6fa2b9de13928c469027099b2150bac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f15aaf6605cf5e349937081790fb5130, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!250 &25013358
 PointEffector2D:
@@ -196,7 +140,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294965247
   m_ForceMagnitude: -1
   m_ForceVariation: -5
   m_DistanceScale: 1
