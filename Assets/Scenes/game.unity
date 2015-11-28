@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a73063f724f3848ae6ce6e8a897830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VerticalDirector: {fileID: 1885370850}
+  VerticalDirector: {fileID: 0}
 --- !u!1001 &587233733
 Prefab:
   m_ObjectHideFlags: 0
@@ -930,6 +930,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 11497254, guid: 86462c15c86cedb4c8d99c3645187c81, type: 2}
+      propertyPath: canShoot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497254, guid: 86462c15c86cedb4c8d99c3645187c81, type: 2}
+      propertyPath: shield
+      value: 
+      objectReference: {fileID: 169898, guid: c050db1a32e4f39488e2c83d9d79f172, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86462c15c86cedb4c8d99c3645187c81, type: 2}
   m_IsPrefabParent: 0

@@ -15,6 +15,7 @@ public class BulletControl : MonoBehaviour {
 	void Update () {
 
 		GetComponent<Rigidbody2D>().velocity = Vector3.left * bulletSpeed;
+
 	}
 
 
@@ -22,8 +23,9 @@ public class BulletControl : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll){
 		if(coll.gameObject.layer == 10){
 			Destroy(coll.gameObject);
-            PoolManager.Pools[PoolIdentifier.Bullets].Despawn(transform);
-        }
+            		PoolManager.Pools[PoolIdentifier.Bullets].Despawn(transform);
+			Game.shieldPoints++;
+        	}
 	}
 
 }
