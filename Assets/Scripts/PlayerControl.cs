@@ -8,20 +8,32 @@ public class PlayerControl : MonoBehaviour {
 	public float speed;
 	public Rigidbody2D player;
 	public GameObject bullet;
+	public bool canShoot = true;
+	public float timer = 1.0f;
 
+	private float cooldown;
 	public float lockPos = 90;
 
 
 	void Start () {
-	
+		cooldown = timer;
 	}
 	
 	void Update () {
 	
+		if(cooldown > 0){
+			cooldown-= Time.deltaTime;
+		}
+		else{
+			canShoot = true;
+		}
+
 		PlayerControls();
 	
-		if(Input.GetKeyDown(KeyCode.Space)){
+		if(Input.GetKeyDown(KeyCode.Space) && canShoot){
 			shoot();
+			canShoot = false;
+			cooldown = timer;
 		}
 
 
@@ -57,7 +69,28 @@ public class PlayerControl : MonoBehaviour {
 
 		var clone = PoolManager.Pools[PoolIdentifier.Bullets].Spawn(bullet.transform,player.position, Quaternion.identity);
 
+<<<<<<< HEAD
 		//PoolManager.Pools[PoolIdentifier.Bullets].Despawn(clone, 3);
+=======
+		PoolManager.Pools[PoolIdentifier.Bullets].Despawn(clone, 3);
+
+	}
+
+	void OnCollisionEnter2D(Collision2D coll){
+		
+		if(coll.gameObject.layer == 9){
+			gameOver();
+		}
+	}
+
+	void canShootAgain(){
+		canShoot = true;
+	}
+
+	void gameOver(){
+			Destroy(this);
+		Application.LoadLevel("gameOver");
+>>>>>>> 0c77ff85d9b53b6501fdc6b6bf070f918ad5c260
 	}
 
 }// eoc PlayerControl
